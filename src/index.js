@@ -11,6 +11,9 @@ const listEl = document.querySelector('.country-list');
 const handleRequestNameCountry = event => {
   const searchQuery = event.target.value.trim();
 
+  if (!searchQuery) {
+    listEl.innerHTML = '';
+  }
   fetchCountries(searchQuery)
     .then(data => {
       if (data.length > 10) {
