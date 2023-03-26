@@ -13,6 +13,7 @@ const handleRequestNameCountry = event => {
 
   if (!searchQuery) {
     listEl.innerHTML = '';
+    return;
   }
   fetchCountries(searchQuery)
     .then(data => {
